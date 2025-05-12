@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
+
 <body>
   <header class="header">
     <a href="#" class="logo"><span>Erica Daquin</span></a>
@@ -18,13 +19,11 @@
       <li>
         <a href="#about"> About</a>
       </li>
-
-      <li>
-        <a href="#experience">Experience</a>
-      </li>
-
       <li>
         <a href="#projects">Projects</a>
+      </li>
+      <li>
+        <a href="#experience">Experience</a>
       </li>
 
       <li>
@@ -35,7 +34,8 @@
 
     <i class="fa-solid fa-bars" id="menu-icon"></i>
 
-    <button class="visit-btn">Visit Github</button>
+    <button class="visit-btn" onclick="window.open('https://github.com/edaqu', '_blank')">Visit GitHub</button>
+
   </header>
 
   <section id="about" class="about">
@@ -50,20 +50,161 @@
         </div>
 
         <div class="btn-group">
-          <div class="btn">Download CV</div>
-          <div class="btn">Contact</div>
+          <a href="resume.pdf" download class="btn">Download CV</a>
+          <a href="#contact" class="btn">Contact</a>
         </div>
+        
 
         <div class="socials">
-          <i class="fa-brands fa-github"></i>
-          <i class="fa-brands fa-linkedin"></i>
+          <a href="https://github.com/edaqu" target="_blank">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/erica-daquin-575299264/" target="_blank">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
         </div>
+        
       </div>
     </div>
     
   </section>
 
+  <section id="projects" class="projects">
 
+    <h2 class="section-title">Recent Projects</h2>
+
+    <div class="project-grid">
+
+      <div class="project-card">
+        <img src="Project1.png" alt="">
+        <h3>Pet Adoption Website (Paws ‘N Claws)</h3>
+        <p>Designed and developed the graphical user interface, 
+          ensuring an intuitive and user-friendly experience for adopters. 
+          Collaborated with the team to enhance usability and accessibility.</p>
+          <div class="btn-group">
+            <a href="http://moxie.cs.oswego.edu:48025" target="_blank" class="btn">Live Demo</a>
+            <a href="https://github.com/Paul-Austin-Oswego-CSC480-HCI521/OZ-CSC-480-HCI-521-Spring-2024" target="_blank" class="btn">GitHub Repo</a>
+          </div>
+          
+      </div>
+      <div class="project-card">
+        <img src="Project2.png" alt="">
+        <h3>Web-based Flashcard Platform (FlashMinds) </h3>
+        <p>FlashMinds is a web-based flashcard platform that allows users to create custom sets, 
+          generate flashcards with AI, and compete in multiplayer quiz games.</p>
+          <div class="btn-group">
+            <a href="https://devpost.com/software/flashminds" target="_blank" class="btn">Live Demo</a>
+            <a href="https://github.com/nidhip26/FlashMinds" target="_blank" class="btn">GitHub Repo</a>
+          </div>
+      </div>
+      <div class="project-card">
+        <img src="Project3.png" alt="">
+        <h3>Self Guided Tour (Mary Walker Heritage App)</h3>
+        <p>The objective of this project was to design and implement a software application taking tourists on a self-guided driving tour of Dr Mary Walker, the Town of Oswego. 
+          The tour comprises 10 to 12 stops, each of which presents information about the site and Mary Walker.</p>
+          <div class="btn-group">
+            <a href="" target="_blank" class="btn">Live Demo</a>
+            <a href="https://github.com/gtsixery/Mary-Walker-Heritage-App" target="_blank" class="btn">GitHub Repo</a>
+          </div>
+      </div>
+    </div>
+
+  </section>
+
+
+
+
+  <section id="experience" class="experience">
+
+    <h2 class="section-title">Experience</h2>
+
+    <div class="experience-info">
+
+      <div class="grid">
+        <div class="grid-card">
+          <i class="fa-solid fa-code"></i>
+          <span>Computer Science TA</span>
+          <h3>Aug 2023 - May 2024</h3>
+          <p> Assisted in creating and implementing monthly lesson plans and daily activities for 
+            50+ students while communicating student progress
+             to supervisors and supporting the overall operation of the educational program.
+           </p>
+        </div>
+        <div class="grid-card">
+          <i class="fa-solid fa-file-code"></i>
+          <span>IT PC Support</span>
+          <h3>May 2024 - Jan 2025</h3>
+          <p> Supported the IT department by managing user account setups, tracking 100+ troubleshooting tickets, maintaining network records, and contributing to IT documentation through research on potential process improvements.
+          </p>
+        </div>
+        <div class="grid-card">
+          <i class="fa-solid fa-laptop"></i>
+          <span>Computer Service Tech</span>
+          <h3>May 2025 - Present</h3>
+          <p> Perform hands-on hardware diagnostics, repairs, and upgrades on a wide range of laptop and desktop systems.
+            Install, configure, and test hardware components, including motherboards, memory, hard drives, and peripheral, while maintaining detailed service documentation and answering to numerous service tickets.  
+            </p>
+        </div>
+      </div>
+      <img src="image.jpg" alt="">
+
+    </div>
+
+  </section>
+  <section class="contact" id="contact">
+    
+    <div class="input-box">
+      <h2 class="section-title">Contact Me</h2>
+  
+      <form id="contact-form">
+
+        <div class="input">
+          <input type="email"
+          name="user_email"
+           class="form-control" 
+           id="email" 
+           placeholder="example@email.com"/>
+          <i class="fa-solid fa-envelope"></i>
+        </div>
+  
+        <button class="btn" onclick="sendMail(event)">Submit</button>
+        <p id="confirmationMessage" style="color: green; margin-top: 10px;"></p>
+      </form>
+    </div>
+
+  </section>
+  
+
+  <footer>
+    <ul>
+      <li>
+        <a href="#about">About</a>
+      </li>
+
+      <li>
+        <a href="#experience">Experience</a>
+      </li>
+
+      <li>
+        <a href="#projects">Projects</a>
+      </li>
+
+      <li>
+        <a href="#contact">Contact</a>
+      </li>
+    </ul>
+    <p class="copyright">© All Right Reserved | Erica Daquin</p>
+  </footer>
+
+  <script
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+  (function(){
+    emailjs.init("tm-Q003Oa3ek2ViB_");
+  })();
+</script>
     <script defer src="script.js"></script>
 </body>
 </html>
