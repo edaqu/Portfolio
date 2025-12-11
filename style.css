@@ -516,7 +516,7 @@ body {
 		}
 		.input-box input{
 			padding: 0.5rem 3rem;
-			width: 80%;
+			width: 50%;
 			font-size: 1.5rem;
 		}
 		.input-box input::placeholder{
