@@ -393,6 +393,42 @@ body {
   background-color: #333;
 }
 
+#contact-form .input {
+  position: relative;
+  width: 250px; /* control size here */
+  margin: 0 auto;
+}
+
+#contact-form input {
+  width: 100%;
+  padding: 0.6rem 2.2rem; /* smaller input */
+  border-radius: 1.5rem;
+  border: 2px solid black;
+  font-size: 1rem; /* smaller text */
+}
+
+#contact-form input::placeholder {
+  font-size: 1rem;
+}
+
+#contact-form .input i {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  font-size: 1.2rem; /* smaller icon */
+  transform: translateY(-50%);
+}
+
+/* Small button */
+#contact-form .btn {
+  margin-top: 0.8rem;
+  font-size: 0.9rem;
+  padding: 0.5rem 1.5rem;
+  border-radius: 1.5rem;
+  background-color: black;
+  color: white;
+  border: none;
+}
 
 
 	footer{
