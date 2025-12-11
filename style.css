@@ -8,24 +8,25 @@
 	text-decoration: none;
 	scroll-behavior: smooth;
 	list-style: none;
+}
+header{
+  position: fixed;
+  top: 0.2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2.5rem;
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
+  color: white;
+  padding: 0.2rem 2.75rem;           /* wider pill */
+  border-radius: 3rem;
+  z-index: 1000;
+  width: min(1600px, 100% - 2.5rem); /* makes the bar visually wider */
+}
 
-
-	header{
-		position: fixed;
-		top: 1rem;
-		left: 50%;
-		transform: translateX(-50%);
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		gap: 5rem;
-		background-color: rgba(0, 0, 0, 0.8);
-		backdrop-filter: blur(8px);
-		color: white;
-		padding: 0.5rem 1.5rem;
-		border-radius: 3rem;
-		z-index: 1000;
-	}
 	.logo{
 		color: white;
 		font-size: 1.3rem;
@@ -60,8 +61,12 @@
 	li a:hover::before{
 		width: 100%;
 	}
+	.socials i {
+    color: #fb607f;
+}
+
 	.visit-btn{
-		padding: 0.8rem 1.5rem;
+		padding: 0.6rem 1.5rem;
 		border-radius: 3rem;
 		border: none;
 		font-weight: 500;
@@ -84,58 +89,102 @@
 		display: none;
 	}
 
-	section{
-		min-height: 100vh;
-		padding: 8rem 12%;
-		width: 100%;
-		position: relative;
-	}
-	.about{
-		display: flex;
-		align-items: center;
-		justify-content: center;
-	}
-	.about .about-container{
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		gap: 10rem;
-	}
-	.about img{
-		width: 25vw;
-		border-radius: 50%;
-	}
-	.info-box{
-		display: flex;
-		flex-direction: column;
-		text-align: center;
-		align-items: center;
-		justify-content: center;
-		gap: 1.5rem;
-	}
-	.info-box h3{
-		font-size: 1.8rem;
-		font-weight: 500;
-		opacity: 0.8;
-	}
-	.info-box h1{
-		font-size: 4rem;
-		font-weight: 600;
-	}
-	.info-box span{
-		background: linear-gradient(to right, #fb607f, 
-		#ffbdc7);
-		background-clip: text;
-		color: transparent;
-		font-size: 2rem;
-	}
+	:root {
+  --bg-color: white;
+  --text-color: black;
+  --card-bg: white;
+}
+
+body.dark-mode {
+  --bg-color: #121212;
+  --text-color: white;
+  --card-bg: #1e1e1e;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.theme-toggle {
+  background: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 1.4rem;
+  cursor: pointer;
+  font-size: 1.5rem;
+  background-color: black;
+  position: absolute;
+  top: 1rem;
+  right: 9rem;
+  z-index: 1001;
+}
+
+.theme-toggle i {
+  transition: transform 0.3s ease;
+  color: #fb607f;
+}
+
+.theme-toggle:hover i {
+  transform: scale(1.1);
+  color: #ffbdc7; 
+}
+
+section{
+  min-height: auto;
+  padding: 6rem 12% 4rem;
+  width: 100%;
+  position: relative;
+}
+
+.about{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;     /* move everything to the left */
+}
+
+.about .about-container{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;     /* keep items left-aligned */
+  gap: 4rem;
+}
+
+.about img{
+  width: 12vw;
+  border-radius: 50%;
+}
+
+
+.info-box{
+  display: flex;
+  flex-direction: row;     /* <- put items next to each other */
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;               /* space between groups */
+  text-align: left;        /* optional — helps text look cleaner */
+}
+
+
+.info-box h3{
+  font-size: 1.4rem; /* smaller */
+  font-weight: 500;
+  opacity: 0.8;
+}
+.info-box h1{
+  font-size: 3rem;   /* smaller */
+  font-weight: 600;
+}
+.info-box span{
+  background: linear-gradient(to right, #fb607f, #ffbdc7);
+  background-clip: text;
+  color: transparent;
+  font-size: 1.5rem; /* smaller */
+}
+
 	.btn-group{
 		display: flex;
 		gap: 1rem;
 	}
 	.btn {
 		gap: 1rem;
-		all: unset; /* resets browser default button styles */
+		all: unset; 
 		display: inline-block;
 		text-align: center;
 		border-radius: 3rem;
@@ -165,11 +214,13 @@
 	}
 
 	.section-title{
-		text-align: center;
-		font-size: 4rem;
-		font-weight: 600;
-		margin-bottom: 3rem;
-	}
+     margin-top: -6.5rem;
+  text-align: center;
+  font-size: 2rem;   /* was 4rem */
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
 	.experience-info{
 		display: flex;
 		align-items: center;
@@ -188,7 +239,7 @@
 	.grid-card{
 		border: 2px solid black;
 		border-radius: 3rem;
-		padding: 2rem;
+		padding: 3rem;
 		display: flex;
 		flex-direction: column;
 		align-items: baseline;
@@ -227,6 +278,7 @@
 		background: linear-gradient(to bottom, #fb607f, 
 		#ffbdc7);
 	}
+	
 	.project-grid{
 		display: grid;
 		grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
@@ -245,6 +297,25 @@
 		cursor: pointer;
 		transition: 0.3s ease-in-out;
 	}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.project-card,
+.grid-card {
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border-color: var(--text-color);
+}
+
+.project-card:hover,
+.grid-card:hover {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+}
+
 	.project-card:hover{
 		background-color: black;
 		color: white;
@@ -290,13 +361,45 @@
 	.input{
 		position: relative;
 	}
-	.input i{
-		position: absolute;
-		font-size: 4rem;
-		top: 50%;
-		left: 10px;
-		transform: translate(50%,-50%);
-	}
+	.input-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+	.input input {
+  border-radius: 3rem;
+  border: 2px solid black;
+  padding: 2rem 8rem;
+  font-size: 3rem;
+}
+
+.input input::placeholder {
+  font-size: 3rem;
+}
+.input i {
+  position: absolute;
+  font-size: 4rem;
+  top: 50%;
+  left: 10px;
+  transform: translate(50%, -50%);
+}
+
+.input-box .btn {
+  margin-top: 2rem; /* Adjust this value to move it further down */
+  font-size: 1rem;
+  padding: 1rem 3rem;
+  border-radius: 3rem;
+  border: black;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.input-box .btn:hover {
+  background-color: black;
+}
+
 
 	footer{
 		bottom: 0;
@@ -422,7 +525,11 @@
 		footer ul{
 			gap: 1rem;
 		}
-	}
+	
+}
+
+
+
 
 
 
